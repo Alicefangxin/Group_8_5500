@@ -1,13 +1,19 @@
 import "./navbar.css"
 
-const Navbar = () => {
+const Navbar = (
+    {
+        registerShown = true,
+        loginShown = true,
+    }
+) => {
   return (
     <div className="navbar">
       <div className="navContainer">
         <span className="logo">lamabooking</span>
         <div className="navItems">
-          <button className="navButton">Register</button>
-          <button className="navButton">Login</button>
+            {/* Use registerShown and loginShown to determine showing or hiding these buttons on the screen */}
+            {registerShown && <button className="navButton">Register</button>}
+            {loginShown && <button className="navButton">Login</button>}
         </div>
       </div>
     </div>
