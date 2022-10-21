@@ -1,6 +1,7 @@
-import "./Register.css";
+import "./register.css";
 
 const Register = () => {
+
     return (
         <div className="login">
             <div className="lContainer">
@@ -8,27 +9,23 @@ const Register = () => {
                     type="text"
                     placeholder="username"
                     id="username"
-                    onChange={handleChange}
                     className="lInput"
                 />
                 <input
                     type="email"
                     placeholder="email"
                     id="email"
-                    onChange={handleChange}
                     className="lInput"
                 />
                 <input
                     type="password"
                     placeholder="password"
                     id="password"
-                    onChange={handleChange}
                     className="lInput"
                 />
-                <button disabled={loading} onClick={handleClick} className="lButton">
+                <button className="lButton">
                     Register
                 </button>
-                {error && <span>{error.message}</span>}
             </div>
         </div>
     );
