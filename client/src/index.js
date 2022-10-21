@@ -7,10 +7,10 @@ import { SearchContextProvider } from './context/SearchContext.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <SearchContextProvider>
+      <AuthContextProvider>
+          <SearchContextProvider>
         <App />
       </SearchContextProvider>
-    </AuthContextProvider>
+      </AuthContextProvider>
   </React.StrictMode>
 );
