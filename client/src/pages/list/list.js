@@ -7,7 +7,6 @@ import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
 
-
 const List = () => {
     const location = useLocation();
     const [destination, setDestination] = useState(location.state.destination);
@@ -45,15 +44,15 @@ const List = () => {
                             <label>Options</label>
                             <div className="lsOptions">
                                 <div className="lsOptionItem">
-                      <span className="lsOptionText">
-                        Min price <small>per night</small>
-                      </span>
+                  <span className="lsOptionText">
+                    Min price <small>per night</small>
+                  </span>
                                     <input type="number" className="lsOptionInput" />
                                 </div>
                                 <div className="lsOptionItem">
-                      <span className="lsOptionText">
-                        Max price <small>per night</small>
-                      </span>
+                  <span className="lsOptionText">
+                    Max price <small>per night</small>
+                  </span>
                                     <input type="number" className="lsOptionInput" />
                                 </div>
                                 <div className="lsOptionItem">
