@@ -1,23 +1,46 @@
 import "./navbar.css"
+import {Link} from "react-router-dom"
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = (
-    {
-        registerShown = true,
-        loginShown = true,
+const Navbar = () => {
+
+    const navigate = useNavigate()
+
+    const { user } = useContext(AuthContext);
+
+    const { loading, error, dispatch } = useContext(AuthContext);
+    const handleLogout = ()=>{
+        dispatch({ type: "LOGOUT" })
+        navigate("/")
     }
-) => {
-  return (
-    <div className="navbar">
-      <div className="navContainer">
-        <span className="logo">lamabooking</span>
-        <div className="navItems">
-            {/* Use registerShown and loginShown to determine showing or hiding these buttons on the screen */}
-            {registerShown && <button className="navButton">Register</button>}
-            {loginShown && <button className="navButton">Login</button>}
+
+
+    return (
+        <div className="navbar">
+            <div className="navContainer">
+                <Link to='/' style={{color:"inherit", textDecoration:"none"}}>
+                    <span className="logo">RacoonBooking</span>
+                </Link>
+                {user ? (
+                    <div className="navItem">
+                        <span>{ user.username } </span>
+                        <button
+                            className="navItems"
+                            onClick={() => handleLogout()}
+                        >Logout</button>
+                    </div>
+                ) : (
+                    <div className="navItems">
+                        <a href=" " className="navButton">Register</a >
+                        <a href="/login" className="navButton">Login</a >
+                    </div>
+                )}
+
+            </div>
         </div>
-      </div>
-    </div>
-  )
+    )
 }
 
 export default Navbar
