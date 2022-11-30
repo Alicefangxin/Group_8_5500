@@ -3,6 +3,7 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import Navbar from "../../components/navbar/Navbar.jsx";
 
 const Register = () => {
 
@@ -33,33 +34,36 @@ const Register = () => {
     };
 
     return (
-        <div className="login">
-            <div className="lContainer">
-                <input
-                    type="text"
-                    placeholder="username"
-                    id="username"
-                    onChange={handleChange}
-                    className="lInput"
-                />
-                <input
-                    type="email"
-                    placeholder="email"
-                    id="email"
-                    onChange={handleChange}
-                    className="lInput"
-                />
-                <input
-                    type="password"
-                    placeholder="password"
-                    id="password"
-                    onChange={handleChange}
-                    className="lInput"
-                />
-                <button disabled={loading} onClick={handleClick} className="lButton">
-                    Register
-                </button>
-                {error && <span>{error.message}</span>}
+        <div>
+            <Navbar registerShown = {false}/>
+            <div className="login">
+                <div className="lContainer">
+                    <input
+                        type="text"
+                        placeholder="username"
+                        id="username"
+                        onChange={handleChange}
+                        className="lInput"
+                    />
+                    <input
+                        type="email"
+                        placeholder="email"
+                        id="email"
+                        onChange={handleChange}
+                        className="lInput"
+                    />
+                    <input
+                        type="password"
+                        placeholder="password"
+                        id="password"
+                        onChange={handleChange}
+                        className="lInput"
+                    />
+                    <button disabled={loading} onClick={handleClick} className="lButton">
+                        Register
+                    </button>
+                    {error && <span>{error.message}</span>}
+                </div>
             </div>
         </div>
     );
