@@ -4,7 +4,12 @@ import { AuthContext } from "../../context/AuthContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (
+    {
+        registerShown = true,
+        loginShown = true,
+    }
+) => {
 
     const navigate = useNavigate()
 
@@ -33,8 +38,9 @@ const Navbar = () => {
                     </div>
                 ) : (
                     <div className="navItems">
-                        <a href=" " className="navButton">Register</a >
-                        <a href="/login" className="navButton">Login</a >
+                        {/* Use registerShown and loginShown to determine showing or hiding these buttons on the navigation bar */}
+                        { registerShown && <Link to="/register" className="navButton">Register</Link> }
+                        { loginShown && <Link to="/login" className="navButton">Login</Link> }
                     </div>
                 )}
 
