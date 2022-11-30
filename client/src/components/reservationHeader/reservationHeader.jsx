@@ -11,7 +11,12 @@ import { AuthContext } from "../../context/AuthContext";
 const ReservationHeader = ({ type }) => {
     const [destination, setDestination] = useState("");
     const [openDate, setOpenDate] = useState(false);
-    const { user } = useContext(AuthContext);
+    // const { user } = useContext(AuthContext);
+
+    const user = {
+        "_id": "62fb0265e543089d3a8de392",
+        "username": "Test"
+    };
 
 
     return (

@@ -18,17 +18,45 @@ import Container from 'react-bootstrap/Container';
 
 const Reservation = () => {
     // const { user } = useContext(AuthContext);
-    // console.log(user._id);
+
     const user = {
       "_id": "62fb0265e543089d3a8de392"
     };
-    const { data, loading, error } = useFetch(`/users/${user._id}`);
-    const [reservations, setReservations] = useState([]);
+    console.log(user._id);
+    // const { data, loading, error } = useFetch(`/users/${user._id}`);
+    // const [reservations, setReservations] = useState([]);
 
 
-    useEffect(() => {
-        setReservations(data.reservations);
-    }, [data.reservations]);
+    // useEffect(() => {
+    //     setReservations(data.reservations);
+    // }, [data.reservations]);
+
+    const reservations = [
+        {
+            "reservation":
+                {
+                    "hotelName": "Awesome Hotel",
+                    "hotelPhoto": "https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg?width=660&height=373&fit=crop&format=pjpg&auto=webp",
+                    "roomNum": [101, 201],
+                    "dateStart": '2022-09-15',
+                    "dateEnd": '2022-09-22'
+                },
+            "desc": "",
+        },
+        {
+            "reservation":
+                {
+                    "hotelName": "JW Marriot Berlin",
+                    "hotelPhoto": "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2022/02/13/realtime/16016946.jpg&x=0&y=0&sw=0&sh=0&sl=W&fw=800&exp=3600&w=930&nt=1",
+                    "roomNum": [301, 201],
+                    "dateStart": '2022-08-18',
+                    "dateEnd": '2022-08-19'
+                },
+            "desc": "",
+        },
+    ]
+
+
     console.log("userinf", reservations);
 
 
