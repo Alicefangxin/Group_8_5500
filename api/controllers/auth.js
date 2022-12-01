@@ -18,7 +18,7 @@ export const register = async (req, res, next) => {
             email: req.body.email,
             password: hash,
             reservations: []
-
+            
         });
 
         await newUser.save();
