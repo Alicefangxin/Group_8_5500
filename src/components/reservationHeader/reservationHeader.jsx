@@ -1,16 +1,13 @@
 import {
-    faBed,
-    faPerson
+    faBed
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./reservationHeader.css";
-import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { Link} from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext.js";
 
 const ReservationHeader = ({ type }) => {
-    const [destination, setDestination] = useState("");
-    const [openDate, setOpenDate] = useState(false);
     const { user } = useContext(AuthContext);
 
 

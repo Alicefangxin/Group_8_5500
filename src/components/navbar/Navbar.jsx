@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const { user } = useContext(AuthContext);
 
-  const { loading, error, dispatch } = useContext(AuthContext);
+  const { dispatch } = useContext(AuthContext);
   const handleLogout = ()=>{
     dispatch({ type: "LOGOUT" })
     navigate("/")

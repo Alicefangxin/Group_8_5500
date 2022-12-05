@@ -9,7 +9,7 @@ import useFetch from "../../hooks/useFetch.js";
 import { useContext, useState, useEffect } from "react";
 import { SearchContext } from "../../context/SearchContext.js";
 import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext.js";
 
 const Reserve = ({ setOpen, hotelId }) => {
