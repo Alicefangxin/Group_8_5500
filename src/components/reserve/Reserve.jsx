@@ -52,7 +52,7 @@ const Reserve = ({ setOpen, hotelId }) => {
       }
       setReservation(reservation)
     }
-  }, [hotelData, selectedRooms, dates])
+  }, [hotelData, selectedRooms, dates, data])
 
 
   const getDatesInRange = (startDate, endDate) => {
@@ -114,7 +114,7 @@ const Reserve = ({ setOpen, hotelId }) => {
           console.log("reservation", user._id, hotelData);
           
           if (i === 0 && reservation) {
-            var reser = axios.put(`/users/reservation/${user._id}`, {
+            axios.put(`/users/reservation/${user._id}`, {
               reservation
             });
           }

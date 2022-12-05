@@ -22,7 +22,7 @@ const useFetch = url=>{
             setLoading(false)
         };
         fetchData();
-    }, []); // we can add url here so that it will update immediately 
+    }, [url]); // we can add url here so that it will update immediately
 
     const reFetch = async ()=>{
         setLoading(true)
