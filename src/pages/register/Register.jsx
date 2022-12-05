@@ -11,7 +11,7 @@ const Register = () => {
     password: undefined,
   });
 
-  const { loading, error, dispatch } = useContext(AuthContext);
+  const { loading, error } = useContext(AuthContext);
 
   const navigate = useNavigate()
 
@@ -23,7 +23,7 @@ const Register = () => {
     e.preventDefault();
     //dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/register", credentials);
+      await axios.post("/auth/register", credentials);
       //dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
       navigate("/")
     } catch (err) {

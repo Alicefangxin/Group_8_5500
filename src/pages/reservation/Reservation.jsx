@@ -1,4 +1,3 @@
-import Featured from "../../components/featured/Featured.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import ReservationHeader from "../../components/reservationHeader/reservationHeader.jsx";
 import MailList from "../../components/mailList/MailList.jsx";
@@ -6,14 +5,10 @@ import Navbar from "../../components/navbar/Navbar.jsx";
 import "./Reservation.css";
 import { AuthContext } from "../../context/AuthContext.js";
 import useFetch from "../../hooks/useFetch.js";
-import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
 
 
 const Reservation = () => {
@@ -22,7 +17,7 @@ const Reservation = () => {
     // const user = {
     //   "_id": "62fb0265e543089d3a8de392"
     // };
-    const { data, loading, error } = useFetch(`/users/${user._id}`);
+    const { data } = useFetch(`/users/${user._id}`);
     const [reservations, setReservations] = useState([]);
 
 
