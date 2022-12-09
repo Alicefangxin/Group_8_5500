@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/home/Home.jsx";
 import Hotel from "./pages/hotel/Hotel.jsx";
-import List from "./pages/list/List.jsx";
+import List from "./pages/list/list.jsx";
 import Login from "./pages/login/login.jsx";
 import Register from "./pages/register/Register.jsx";
 import Reservation from "./pages/reservation/Reservation.jsx";
